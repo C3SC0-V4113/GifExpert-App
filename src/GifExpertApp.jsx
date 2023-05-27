@@ -4,9 +4,8 @@ import { AddCategory } from "./components/AddCategory";
 export const GifExpertApp = () => {
   const [categories, setCategories] = useState(["Metal Gear", "Silent Hill"]);
 
-  const onAddCategory = () => {
-    //Agregar Bloodborne
-    setCategories(["Bloodborne", ...categories]);
+  const onAddCategory = (newCategory) => {
+    setCategories([newCategory, ...categories]);
   };
 
   return (
@@ -14,7 +13,10 @@ export const GifExpertApp = () => {
       {/**titulo */}
       <h1>GifExpertApp</h1>
       {/**Input */}
-      <AddCategory setCategories={setCategories} />
+      <AddCategory
+        onNewCategory={(event) => onAddCategory(event)}
+        //setCategories={setCategories}
+      />
 
       {/**Grid de Gifs
        *    GifItem
