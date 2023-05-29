@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in <GifGridItem/> debe hacer un match con el snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="metal gear solid GIF"
+      src="https://media1.giphy.com/media/CFGyQLh90JU7S/giphy.gif?cid=b3e64bedy9zpam0f6byzw5r8ioi0o3eyugu2h2ryw60q1obm&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+    />
+    <p>
+      metal gear solid GIF
+    </p>
+  </div>
+</div>
+`;
