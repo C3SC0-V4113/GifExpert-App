@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { GifGridItem } from "../../src/components/GifGridItem";
 
 describe("Test in <GifGridItem/>", () => {
@@ -14,5 +14,21 @@ describe("Test in <GifGridItem/>", () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+
+  test("debe mostrar la imagen con el URL y el ALT indicado", () => {
+    render(<GifGridItem title={gif.title} url={gif.url} />);
+    //screen.debug();
+    // expect(screen.getByRole("img").src).toBe(gif.url);
+    // expect(screen.getByRole("img").alt).toBe(gif.title);
+
+    const { src, alt } = screen.getByRole("img");
+    expect(src).toBe(gif.url);
+    expect(alt).toBe(gif.title);
+  });
+
+  test("debe de mostrar el titulo en el componente", () => {
+    render(<GifGridItem title={gif.title} url={gif.url} />);
+    expect(screen.getByText(gif.title)).toBeTruthy();
   });
 });
